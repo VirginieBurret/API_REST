@@ -10,14 +10,15 @@ const postSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    createdAt:{
-        type:String,
-        index:true,
-        unique:true
-    },
+    
     author:String,
     category:String
-})
+    
+},
+{
+    timestamps: true, // créer automatiquement un created at et update at dans la bdd TOUJOURS QUAND ON CREER QQCH
+  }
+);
 
 const Post = mongoose.model("Post", postSchema)
 module.exports = Post

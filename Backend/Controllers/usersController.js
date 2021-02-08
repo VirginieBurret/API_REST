@@ -31,11 +31,7 @@ console.log(user);
             res.status(200).json('erreur')
         }
     })
-    });
-
-
-    // mettre le mdp hashé dans la const hash et utiliser la constante hash instead of req.body.password
-    
+    });  
 }
 
 //se connecter, donc chercher un nouvel utilisateur
@@ -47,7 +43,7 @@ User.findOne({username}).select('-password') // ça cherche l'user PUIS    -pass
     if(!user){
         return res.status(401).json('user not found')
     }
-    // comparer le mdp de req.boy.password avec notre mdp dans la BDD avec  user.password (le mdp) PUIS (.then(valid) => {
+    // comparer le mdp de req.body.password avec notre mdp dans la BDD avec  user.password (le mdp) PUIS (.then(valid) => {
         // si c'est pas valid return 401 mdp incorrect
         //si  c valid res.statut(user).
     })
@@ -62,13 +58,4 @@ User.findOne({username}).select('-password') // ça cherche l'user PUIS    -pass
 
 
 
-    //User.findOne({username}, function(err, result){      //{username:username } = username(propriété du modèle) + ce que je veux mettre dedans (req.body.username) et moi je l'ai destructuré donc je peux utiliser la shorty property pour juste utiliser username
-        //if(err) throw err;    //There was an error with the database.
-        //if(!result) console.log("erreur"); //The query found no results.
-       // else {
-            //console.log(result.username); 
-       // }
-   // }
-
-    //)
-}
+    
