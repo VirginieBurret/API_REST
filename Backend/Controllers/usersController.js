@@ -3,20 +3,20 @@ const User  = require('../models/user');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
-
+ //.select("-password ou name ou ce que je veux") =>mongoooooose
 // créer un nouvel utilisateur
-exports.register = (req,res) => {
+exports.register = async (req,res) => {
 const { password, email, username } = req.body;
 
     //crypter mon mdp
-    bcrypt.hash(password, saltRounds, function(err, hash) {
+   const hash = await bcrypt.hash(password, saltRounds) 
         const user = new User() // j'ai créer une nouvelle instance de User, donc mtnt je peux voir ce qu'il se passe dedans
     // user.username = ce qu'il y a dans notre modele / req.body.username = requete de l'utilisateur( ce qu'il soumet dans le form d'inscription)
     user.username = username //req.body.username;
     user.email = email //req.body.email;
     user.password = hash;
     // La on a stocké les infos de l'user, mtnt il faut les sauvegarder
-console.log(user);
+
 
 
     user.save((error)=> {
@@ -28,27 +28,42 @@ console.log(user);
 
         else{
             console.log(error);
-            res.status(200).json('erreur')
+            res.status(200).json('erreur : username non disponible')
         }
     })
-    });  
+ 
 }
 
 //se connecter, donc chercher un nouvel utilisateur
 exports.login = (req,res) =>   {
     const { password, email, username } = req.body;
 
-User.findOne({username}).select('-password') // ça cherche l'user PUIS    -password pour ne pas afficher le mpd dans la requete car le front n'a pas besoin du mdp
+User.findOne({username})// ça cherche l'user PUIS    -password pour ne pas afficher le mpd dans la requete car le front n'a pas besoin du mdp
 .then((user) => {
+   
     if(!user){
+
         return res.status(401).json('user not found')
     }
-    // comparer le mdp de req.body.password avec notre mdp dans la BDD avec  user.password (le mdp) PUIS (.then(valid) => {
-        // si c'est pas valid return 401 mdp incorrect
-        //si  c valid res.statut(user).
+
+    bcrypt.compare(req.body.password, user.password)
+ 
+    
+    .then(isValid => {
+      
+        if(!isValid){
+            return res.status(401).json({error: 'Mot de passe incorrect'})
+        }
+        //avant de renvoyer la réponse je dois créer un token JWT (FAUDRA L'INSTALLER)
+        // on va créer un cookie et on va stocker le token dans le cookie (COOKIE PARSER POUR LIRE LE COOKIE AVEC APP.USE DANS LE SERVER.JS COMME BODY PARSER)
+        res.status(200).json({userId: user._id}) //si mdp valide je renvoie l'id
+       
     })
-    return res.status(200).json(user)
-    console.log(user);
+    .catch(error => res.status(500).json("1er catch"))
+   
+    })
+.catch(error => res.status(500).json("2ème catch"))
+  
     
 }
 
