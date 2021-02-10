@@ -2,6 +2,7 @@ const User  = require('../models/user');
 
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
+const jwt = require('jsonwebtoken'); // npm install --save jsonwebtoken avant 
 
  //.select("-password ou name ou ce que je veux") =>mongoooooose
 // créer un nouvel utilisateur
@@ -56,7 +57,14 @@ User.findOne({username})// ça cherche l'user PUIS    -password pour ne pas affi
         }
         //avant de renvoyer la réponse je dois créer un token JWT (FAUDRA L'INSTALLER)
         // on va créer un cookie et on va stocker le token dans le cookie (COOKIE PARSER POUR LIRE LE COOKIE AVEC APP.USE DANS LE SERVER.JS COMME BODY PARSER)
-        res.status(200).json({userId: user._id}) //si mdp valide je renvoie l'id
+        res.status(200).json({
+            userId: user._id,
+            token: jwt.sign(
+                { userId: user._id},
+                'RANDOM_TOKEN_SECRET',
+                { expiresIn: '24h'}
+            )
+        }) //si mdp valide je renvoie l'id
        
     })
     .catch(error => res.status(500).json("1er catch"))

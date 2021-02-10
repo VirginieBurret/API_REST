@@ -8,12 +8,11 @@ const app = express()
 const postsRoutes = require("./routes/postsRoutes")
 const usersRoutes = require("./routes/usersRoutes")
 
-// ! ! ! ! POUR LIRE LES REQ.BODY ON A BESOIN DE BODY PARSER (comme cookie parser pour lire les cookie) ! ! ! 
+// ! ! ! ! POUR LIRE LES REQ.BODY ON A BESOIN DE BODY PARSER (comme cookie parser pour signer les cookies) ! ! ! 
 // bien lire la doc
 var bodyParser = require('body-parser');
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
- 
 // parse application/json
 app.use(bodyParser.json())
 
