@@ -57,11 +57,12 @@ User.findOne({username})// ça cherche l'user PUIS    -password pour ne pas affi
         }
         //avant de renvoyer la réponse je dois créer un token JWT (FAUDRA L'INSTALLER)
         // on va créer un cookie et on va stocker le token dans le cookie (COOKIE PARSER POUR LIRE LE COOKIE AVEC APP.USE DANS LE SERVER.JS COMME BODY PARSER)
+        // TODO créer la const pour le token 
         res.status(200).json({
             userId: user._id,
             token: jwt.sign(
                 { userId: user._id},
-                'RANDOM_TOKEN_SECRET',
+                'RANDOM_TOKEN_SECRET', 
                 { expiresIn: '24h'}
             )
         }) //si mdp valide je renvoie l'id
