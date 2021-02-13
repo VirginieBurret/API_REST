@@ -1,0 +1,32 @@
+.vignettes{
+
+  text-align: center;
+  justify-content: space-between;
+  
+  
+  &__totalVignettes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 40rem;
+    height: 15rem;
+    margin-top: 17rem;
+    margin-left: 40rem;
+    margin-bottom: 5rem;
+    &__vignette{
+      background:#bfd70e;
+      border-radius:50%;
+      width:150px;
+      height:150px;
+      border:2px solid #679403; 
+      
+      
+      
+    }
+
+  }
+    
+  
+    
+  }

@@ -1,0 +1,59 @@
+.mainHome{
+
+margin: 0;
+min-height: 90vh;
+display: grid;
+
+
+&__content{
+ display: flex;
+justify-content: space-between;
+min-height: 90vh;
+
+  &__move{
+  width: 33.3%;
+  background-image: url("../../../assets/move.png");
+  background-size: cover;
+  display: block;
+  
+    filter: contrast(100%);
+    -webkit-filter: contrast(100%);
+    
+    &:hover {
+    filter: contrast(80%);
+    -webkit-filter: contrast(80%);
+    }
+  }
+ 
+  &__eat{
+    width: 33.3%;
+    background-image: url("../../../assets/eat.png");
+    background-size: cover;
+    display: block;
+    filter: contrast(100%);
+    -webkit-filter: contrast(100%);
+    
+    &:hover {
+    filter: contrast(80%);
+    -webkit-filter: contrast(80%);
+    }
+    
+ }
+ 
+ &__breathe{
+  width: 33.3%;
+  background-image: url("../../../assets/breathe.png");
+  background-size: cover;
+  display: block;
+  filter: contrast(100%);
+  -webkit-filter: contrast(100%);
+  
+  &:hover {
+  filter: contrast(80%);
+  -webkit-filter: contrast(80%);
+  }
+  
+ }
+}
+
+}

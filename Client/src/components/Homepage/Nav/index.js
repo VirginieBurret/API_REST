@@ -1,28 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button, Segment } from 'semantic-ui-react';
 import './nav.scss';
 
 const Nav = () => (
   <nav className="nav">
     <ul className="nav__linkList">
-      <li>
-        LOGO
-      </li>
-      <li>
-        Accueil
-      </li>
-      <li>
-        Bouger
-      </li>
-      <li>
-        Manger
-      </li>
-      <li>
-        Respirer
-      </li>
+      <Link style={{ color: 'white' }} to="/"> <li>LOGO</li></Link>
+      <Link style={{ color: 'white' }} to="/bouger"> <li>Bouger</li></Link>
+      <Link style={{ color: 'white' }} to="/manger"><li>Manger</li></Link>
+      <Link style={{ color: 'white' }} to="/respirer"> <li>Respirer</li></Link>
     </ul>
     <div className="nav__button">
       <Button inverted color="violet">
