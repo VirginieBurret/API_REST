@@ -19,7 +19,7 @@ const Nav = () => (
       </Button>
 
       <Button inverted color="purple">
-        Inscription
+        <Link className="buttonLink" to="/register">Inscription</Link>
       </Button>
     </div>
   </nav>

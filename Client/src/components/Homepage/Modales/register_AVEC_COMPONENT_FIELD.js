@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import './register.scss';
-
+import { Link } from 'react-router-dom';
 const CustomInput = ({ field, form, ...props }) => (
   <div className="form-group">
     <label>{field.name}</label>
@@ -11,11 +11,9 @@ const CustomInput = ({ field, form, ...props }) => (
   </div>
 );
 
-const CustomError = (props) => {
-return(
-<div className="test-danger">{ props.children }</div>
-)
-};
+const CustomError = (props) => (
+  <div className="test-danger">{ props.children }</div>
+);
 
 class Register extends Component {
 // on va définir un schema de validation avec YUP
@@ -26,7 +24,7 @@ userSchema= Yup.object().shape({
   name: Yup.string().min(8, 'trop court').max(15, 'trop long').required('Entrez votre nom svp'),
   // pas besoin de regex avec .email, on utilise le regex de yup
   email: Yup.string().email('email non valide').required('Entrez un email svp'),
-  password: Yup.string().min(8, 'Le mot de passe doit faire au moins 8 caractères').required('Entrez un modt de passe svp'),
+  password: Yup.string().min(8, 'Le mot de passe doit faire au moins 8 caractères').required('Entrez un mot de passe svp'),
   passwordConfirm: Yup.string().oneOf([Yup.ref('password'), null], 'Les deux mots de passe doivent être identiques'),
 })
 
@@ -70,27 +68,34 @@ render() {
           values,
           isSubmitting,
           errors,
-          touched, // garder en mémoir les éléments qui ont déjà été touchés
+          touched, // garder en mémoire les éléments qui ont déjà été touchés
         }) => (
+          <div className="formWrapper">
 
-          <form onSubmit={handleSubmit} className="bg-white border p-5 d-flex flex-column">
-            <Field name="name" component={CustomInput} />
-            <ErrorMessage name="name" component={CustomError} />
+            <form onSubmit={handleSubmit} className="bg-white border p-5 d-flex flex-column">
+              <Link to="/">
+                <p>X</p>
+              </Link>
+              <Field name="name" type="text" component={CustomInput} />
+              <ErrorMessage name="name" component={CustomError} />
 
-            <Field name="email" type="email" component={CustomInput} />
-            <ErrorMessage name="email" component={CustomError} />
+              <Field name="email" type="email" component={CustomInput} />
+              <ErrorMessage name="email" component={CustomError} />
 
-            <Field name="password" component={CustomInput} />
-            <ErrorMessage name="password" component={CustomError} />
+              <Field name="password" type="password" component={CustomInput} />
+              <ErrorMessage name="password" component={CustomError} />
 
-            <Field name="passwordConfirm" component={CustomInput} />
-            <ErrorMessage name="passwordConfirm" component={CustomError} />
+              <Field name="passwordConfirm" component={CustomInput} />
+              <ErrorMessage name="passwordConfirm" component={CustomError} />
 
-            <button type="submit" className="btn btn-primary" disabled={isSubmitting}>Envoyer</button>
-          </form>
+              <button type="submit" className="btn btn-primary" disabled={isSubmitting}>Envoyer</button>
+            </form>
+          </div>
         )}
       </Formik>
     </div>
   );
 }
 }
+
+export default Register;
