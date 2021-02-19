@@ -1583,6 +1583,13 @@ axe-core@^4.0.2:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.1.2.tgz#7cf783331320098bfbef620df3b3c770147bc224"
   integrity sha512-V+Nq70NxKhYt89ArVcaNL9FDryB3vQOd+BFXZIfO3RP6rwtj+2yqqqdHEkacutglPaZLkJeuXKCjCJDMGPtPqg==
 
+axios@^0.21.1:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
+  dependencies:
+    follow-redirects "^1.10.0"
+
 axobject-query@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/axobject-query/-/axobject-query-2.2.0.tgz#943d47e10c0b704aa42275e20edf3722648989be"
@@ -2045,6 +2052,11 @@ colorette@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/colorette/-/colorette-1.2.1.tgz#4d0b921325c14faf92633086a536db6e89564b1b"
   integrity sha512-puCDz0CzydiSYOrnXpz/PKd69zRrribezjtE9yd4zvytoRc8+RY/KJPvtPFKZS3E3wP6neGyMe0vOTlHO5L3Pw==
+
+combine-reducers@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/combine-reducers/-/combine-reducers-1.0.0.tgz#7dd6cef42757d2e13bfb61c8560d846dd7ea169b"
+  integrity sha1-fdbO9CdX0uE7+2HIVg2EbdfqFps=
 
 commander@^2.20.0:
   version "2.20.3"
@@ -3428,7 +3440,7 @@ flatten@^1.0.2:
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.3.tgz#c1283ac9f27b368abc1e36d1ff7b04501a30356b"
   integrity sha512-dVsPA/UwQ8+2uoFe5GHtiBMu48dWLTdsuEd7CKGlZlD78r1TTWBvDuFaFGKCo/ZfEr95Uk56vZoX86OsHkUeIg==
 
-follow-redirects@^1.0.0:
+follow-redirects@^1.0.0, follow-redirects@^1.10.0:
   version "1.13.2"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.2.tgz#dd73c8effc12728ba5cf4259d760ea5fb83e3147"
   integrity sha512-6mPTgLxYm3r6Bkkg0vNM0HTjfGrOEtsfbhagQvbxDEsEkpNhw582upBaoRZylzen6krEmxXJgt9Ju6HiI4O7BA==
@@ -6257,6 +6269,13 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
+react-bootstrap-icons@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/react-bootstrap-icons/-/react-bootstrap-icons-1.3.0.tgz#643e49d1dcaf500e8a794f0c6651c39305e8bca7"
+  integrity sha512-84ne6JNYd/aT4/lk9IT23YmPdat7RrBFuf1rSIdrufX5bAkVzDPqNUkLS1gZqylZIzjjKJvIevLHLGYaMCo7Ig==
+  dependencies:
+    prop-types "^15.7.2"
+
 react-burger-menu@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/react-burger-menu/-/react-burger-menu-3.0.3.tgz#be1268423b7a4a21d99243ae63842e480a5ba70b"
@@ -6491,6 +6510,11 @@ recompose@0.30.0:
     hoist-non-react-statics "^2.3.1"
     react-lifecycles-compat "^3.0.2"
     symbol-observable "^1.0.4"
+
+redux-devtools-extension@^2.13.8:
+  version "2.13.8"
+  resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.8.tgz#37b982688626e5e4993ff87220c9bbb7cd2d96e1"
+  integrity sha512-8qlpooP2QqPtZHQZRhx3x3OP5skEV1py/zUdMY28WNAocbafxdG2tRD1MWE7sp8obGMNYuLWanhhQ7EQvT1FBg==
 
 redux@^4.0.5:
   version "4.0.5"
@@ -7428,6 +7452,11 @@ svgo@^1.0.0:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+sweetalert2@^10.15.5:
+  version "10.15.5"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-10.15.5.tgz#cca272fdb44c0f3eef3e074ebed4965e9baf118f"
+  integrity sha512-zHZqVpsEyfBVy/O25D7RMYyh+/h0jbmHXGK9DWEDnkPvsl4JlMueJRSEidAFS+mtYDLI8fFkGKltgHRvDPRV1g==
 
 symbol-observable@^1.0.4, symbol-observable@^1.2.0:
   version "1.2.0"

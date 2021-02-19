@@ -4,6 +4,7 @@ import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import './register.scss';
 import { Link } from 'react-router-dom';
+
 const CustomInput = ({ field, form, ...props }) => (
   <div className="form-group">
     <label>{field.name}</label>

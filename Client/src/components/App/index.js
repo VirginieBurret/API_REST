@@ -9,7 +9,7 @@ import Homepage from '../Homepage';
 import Bouger from '../Bouger';
 import Manger from '../Manger';
 import Respirer from '../Respirer';
-import ModalRegister from '../Homepage/Modales/register_AVEC_COMPONENT_FIELD';
+import ModalRegister from '../../containers/Homepage/Modales';
 // == Composant;
 const App = () => (
   <div className="app">
