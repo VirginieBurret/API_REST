@@ -16,7 +16,18 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+//cors pour exploiter notre api en front
+const cors = require('cors')
 
+const corsOptions = {
+    origin: 'http://localhost:8080',
+    credentials: true,
+    'allowedHeaders': ['sessionId', 'Content-Type', 'Authorization'],
+    'exposedHeaders': ['sessionId'],
+    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    'preflightContinue': false
+  }
+  app.use(cors(corsOptions));
 
 app.use('/api/posts', postsRoutes) // ça c'est la base de mon url pour les posts ()
 app.use('/api/users', usersRoutes)

@@ -31,6 +31,7 @@ const { password, email, username } = req.body;
             console.log(error);
             res.status(200).json('erreur : username non disponible')
         }
+       
     })
  
 }
