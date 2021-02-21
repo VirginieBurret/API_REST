@@ -47,6 +47,7 @@
     "webpack-merge": "*"
   },
   "dependencies": {
+    "@sweetalert2/themes": "^4.0.3",
     "axios": "^0.21.1",
     "combine-reducers": "^1.0.0",
     "formik": "^2.2.6",

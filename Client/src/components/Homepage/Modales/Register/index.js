@@ -3,13 +3,13 @@ import React from 'react';
 import './register.scss';
 import { withFormik, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import {
   XCircleFill,
 } from 'react-bootstrap-icons';
 
 const Register = (props) => {
-  const { handleSubmit, handleChange, values } = props;
+  const { handleSubmit, handleChange, values, redirect } = props;
 
   return (
     <>
@@ -136,4 +136,6 @@ export default withFormik({
     props.handleRegister(values);
     isSubmitting(true);
   },
+
+
 })(Register);

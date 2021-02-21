@@ -40,7 +40,7 @@ const { password, email, username } = req.body;
 exports.login = (req,res) =>   {
     const { password, email, username } = req.body;
 
-User.findOne({username})// ça cherche l'user PUIS    -password pour ne pas afficher le mpd dans la requete car le front n'a pas besoin du mdp
+User.findOne({email})// ça cherche l'user PUIS    -password pour ne pas afficher le mpd dans la requete car le front n'a pas besoin du mdp
 .then((user) => {
    
     if(!user){

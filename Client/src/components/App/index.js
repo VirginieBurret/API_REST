@@ -9,7 +9,8 @@ import Homepage from '../Homepage';
 import Bouger from '../Bouger';
 import Manger from '../Manger';
 import Respirer from '../Respirer';
-import ModalRegister from '../../containers/Homepage/Modales';
+import ModalRegister from '../../containers/Homepage/Modales/Register';
+import ModalLogin from '../../containers/Homepage/Modales/Login';
 // == Composant;
 const App = () => (
   <div className="app">
@@ -20,6 +21,10 @@ const App = () => (
     <Route exact path="/register">
       <Homepage />
       <ModalRegister />
+    </Route>
+    <Route exact path="/login">
+      <Homepage />
+      <ModalLogin />
     </Route>
   </div>
 );

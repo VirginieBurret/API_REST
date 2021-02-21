@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Register from '../../../components/Homepage/Modales';
+import Register from '../../../../components/Homepage/Modales/Register';
 
 const mapStateToProps = (state) => ({
   register: !state.user.register,
