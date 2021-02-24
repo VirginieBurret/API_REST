@@ -48,7 +48,7 @@ export default (store) => (next) => (action) => {
         },
       }).then((response) => {
        console.log(response);
-        store.dispatch(logIn(response.data.user));
+     
       }).catch((error) => {
         console.log(error);
       });

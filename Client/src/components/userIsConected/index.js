@@ -1,8 +1,9 @@
 import React from 'react';
 import Nav from '../Homepage/Nav';
 import './userIsConected.scss';
+import Main from './Main';
 
-const Adventure = ({ props = 'Main' }) => ( // par défaut on lui passe la main 
+const UserIsConected = ({ props = 'Main' }) => ( // par défaut on lui passe la main 
   <div className="Adventure">
     <Nav />
     {(props === 'Main') && <Main /> }
@@ -11,4 +12,4 @@ const Adventure = ({ props = 'Main' }) => ( // par défaut on lui passe la main
 );
 
 // si ce qui ya a gauche c true => on affiche le composant à droite
-export default Adventure;
+export default UserIsConected;
