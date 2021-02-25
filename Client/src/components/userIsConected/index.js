@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from '../Homepage/Nav';
+import Nav from '../../components/Homepage/Nav';
 import './userIsConected.scss';
 import Main from './Main';
 
