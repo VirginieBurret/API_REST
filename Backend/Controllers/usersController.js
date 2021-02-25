@@ -42,7 +42,7 @@ exports.login = (req,res) =>   {
 
 User.findOne({email})// ça cherche l'user PUIS    -password pour ne pas afficher le mpd dans la requete car le front n'a pas besoin du mdp
 .then((user) => {
-   
+  
     if(!user){
 
         return res.status(401).json('user not found')
@@ -60,6 +60,7 @@ User.findOne({email})// ça cherche l'user PUIS    -password pour ne pas affiche
         // on va créer un cookie et on va stocker le token dans le cookie (COOKIE PARSER POUR LIRE LE COOKIE AVEC APP.USE DANS LE SERVER.JS COMME BODY PARSER)
         // TODO créer la const pour le token 
         res.status(200).json({
+            username: user.username,
             userId: user._id,
             token: jwt.sign(
                 { userId: user._id},
