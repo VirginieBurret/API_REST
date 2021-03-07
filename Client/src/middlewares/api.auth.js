@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import Swal from 'sweetalert2/src/sweetalert2';
-import { REGISTER, LOG_IN, logIn } from '../actions/user';
+import { REGISTER, TRY_TO_LOGIN, logIn } from '../actions/user';
 import './scss.scss';
 
 export default (store) => (next) => (action) => {
@@ -9,7 +9,7 @@ export default (store) => (next) => (action) => {
     case REGISTER: {
       axios({
         method: 'post',
-        url: 'http://localhost:5000/api/users/register',
+        url: 'http://localhost:4000/api/users/register',
         withCredentials: true,
         data: {
           email: action.data.email,
@@ -36,11 +36,11 @@ export default (store) => (next) => (action) => {
       next(action);
       break;
     }
-    case LOG_IN: {
+    case TRY_TO_LOGIN: {
       console.log(action);
       axios({
         method: 'post',
-        url: 'http://localhost:5000/api/users/login',
+        url: 'http://localhost:4000/api/users/login',
         withCredentials: true,
         data: {
           email: action.data.email,
@@ -48,7 +48,7 @@ export default (store) => (next) => (action) => {
         },
       }).then((response) => {
        console.log(response);
-     
+       store.dispatch(logIn(response.data.user));
       }).catch((error) => {
         console.log(error);
       });

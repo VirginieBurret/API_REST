@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from '../../components/Homepage/Nav';
 import './userIsConected.scss';
-import Main from './Main';
+import Main from '../userIsConected/Main';
 
 const UserIsConected = ({ props = 'Main' }) => ( // par défaut on lui passe la main 
   <div className="Adventure">
